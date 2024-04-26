@@ -29,7 +29,6 @@ class HomeView extends StackedView<HomeViewModel> {
               zoomGesturesEnabled: true,
               onMapCreated: viewModel.onMapCreated,
             ),
-            Text(viewModel.currentPosition.toString()),
             const MapSearchBottomSheet()
           ],
         ),
