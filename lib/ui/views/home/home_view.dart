@@ -12,9 +12,16 @@ class HomeView extends StackedView<HomeViewModel> {
     HomeViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
-      body: SafeArea(child: MapSearchBottomSheet()),
-    );
+    return Material(
+      child: Scaffold(
+        resizeToAvoidBottomInset: true,
+        body: Stack(
+          children: <Widget>[
+            SlidingUp
+          ],
+        ),
+      ),
+    )
   }
 
   @override
