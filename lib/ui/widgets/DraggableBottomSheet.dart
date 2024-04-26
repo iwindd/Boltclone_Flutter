@@ -55,11 +55,11 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
       return DraggableScrollableSheet(
         key: sheet,
         initialChildSize: 0.13,
-        maxChildSize: 0.95,
+        maxChildSize: 0.13,
         minChildSize: 0.13,
         expand: true,
         snap: true,
-        snapSizes: const [0.13, 0.95],
+        snapSizes: const [0.13],
         controller: controller,
         builder: (BuildContext context, ScrollController scrollController) {
           return DecoratedBox(

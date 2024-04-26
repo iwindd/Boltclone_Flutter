@@ -1,6 +1,9 @@
 import 'package:boltclone_stacked/ui/widgets/DraggableBottomSheet.dart';
 import 'package:flutter/material.dart';
-
+import 'package:boltclone_stacked/app/app.locator.dart';
+import 'package:boltclone_stacked/app/app.router.dart';
+import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 class MapSearchBottomSheet extends StatefulWidget {
   const MapSearchBottomSheet({super.key});
 
@@ -9,9 +12,12 @@ class MapSearchBottomSheet extends StatefulWidget {
 }
 
 class _MapSearchBottomSheetState extends State<MapSearchBottomSheet> {
+  final _navigationService = locator<NavigationService>();
   @override
   Widget build(BuildContext context) {
     return DraggableBottomSheet(
+        child: GestureDetector(
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
             color: Colors.black12, borderRadius: BorderRadius.circular(10)),
@@ -19,7 +25,6 @@ class _MapSearchBottomSheetState extends State<MapSearchBottomSheet> {
         margin: const EdgeInsets.only(left: 20, right: 20),
         child: const Row(
           children: [
-            /* Icon(Icons.search), */
             CircleAvatar(
               radius: 17,
               backgroundColor: Colors.black12,
@@ -33,6 +38,13 @@ class _MapSearchBottomSheetState extends State<MapSearchBottomSheet> {
           ],
         ),
       ),
+    ));
+  }
+
+  void onTap() async{
+    await _navigationService.navigateTo(
+      Routes.searchView,
+      transition: TransitionsBuilders.slideTop,
     );
   }
 }

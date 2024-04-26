@@ -7,6 +7,7 @@ import 'package:stacked_services/stacked_services.dart';
 import 'package:boltclone_stacked/ui/views/permission/permission_view.dart';
 import 'package:boltclone_stacked/services/map_service.dart';
 import 'package:boltclone_stacked/services/permission_service.dart';
+import 'package:boltclone_stacked/ui/views/search/search_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -14,6 +15,7 @@ import 'package:boltclone_stacked/services/permission_service.dart';
     MaterialRoute(page: HomeView),
     MaterialRoute(page: StartupView),
     MaterialRoute(page: PermissionView),
+    MaterialRoute(page: SearchView),
 // @stacked-route
   ],
   dependencies: [
