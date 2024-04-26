@@ -46,7 +46,8 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
     controller.dispose();
   }
 
-  DraggableScrollableSheet get getSheet => (sheet.currentWidget as DraggableScrollableSheet);
+  DraggableScrollableSheet get getSheet =>
+      (sheet.currentWidget as DraggableScrollableSheet);
 
   @override
   Widget build(BuildContext context) {
@@ -89,25 +90,26 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
     });
   }
 
-  SliverToBoxAdapter topButtonIndicator(){
+  SliverToBoxAdapter topButtonIndicator() {
     return SliverToBoxAdapter(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Center(
-            child: Wrap(children: [
-              Container(
-                width: 50,
-                margin: const EdgeInsets.only(top:10, bottom: 10),
-                height: 5,
-                decoration: const BoxDecoration(
-                  color: Colors.black12,
-                  shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(Radius.circular(8.0))
-                ),
-              )
-            ],),
+            child: Wrap(
+              children: [
+                Container(
+                  width: 50,
+                  margin: const EdgeInsets.only(top: 10, bottom: 10),
+                  height: 5,
+                  decoration: const BoxDecoration(
+                      color: Colors.black12,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(Radius.circular(8.0))),
+                )
+              ],
+            ),
           )
         ],
       ),
