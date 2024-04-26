@@ -6,6 +6,7 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:boltclone_stacked/ui/views/permission/permission_view.dart';
 import 'package:boltclone_stacked/services/map_service.dart';
+import 'package:boltclone_stacked/services/permission_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -20,6 +21,7 @@ import 'package:boltclone_stacked/services/map_service.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: MapService),
+    LazySingleton(classType: PermissionService),
 // @stacked-service
   ],
   bottomsheets: [

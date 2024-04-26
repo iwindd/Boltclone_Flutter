@@ -7,6 +7,7 @@ import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
 import 'package:boltclone_stacked/services/map_service.dart' as _i7;
+import 'package:boltclone_stacked/services/permission_service.dart' as _i8;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
@@ -100,7 +101,7 @@ class MockNavigationService extends _i1.Mock implements _i2.NavigationService {
     Duration? duration,
     bool? popGesture,
     int? id,
-    _i4.Curve? curve,
+    dynamic curve,
     bool? fullscreenDialog = false,
     bool? preventDuplicates = true,
     _i2.Transition? transitionClass,
@@ -136,7 +137,7 @@ class MockNavigationService extends _i1.Mock implements _i2.NavigationService {
     Duration? duration,
     bool? popGesture,
     int? id,
-    _i4.Curve? curve,
+    dynamic curve,
     bool? fullscreenDialog = false,
     bool? preventDuplicates = true,
     _i2.Transition? transitionClass,
@@ -235,7 +236,7 @@ class MockNavigationService extends _i1.Mock implements _i2.NavigationService {
     dynamic arguments,
     int? id,
     bool? opaque,
-    _i4.Curve? curve,
+    dynamic curve,
     Duration? duration,
     bool? fullscreenDialog = false,
     bool? popGesture,
@@ -676,3 +677,8 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockMapService extends _i1.Mock implements _i7.MapService {}
+
+/// A class which mocks [PermissionService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockPermissionService extends _i1.Mock implements _i8.PermissionService {}
