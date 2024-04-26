@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:boltclone_stacked/app/app.locator.dart';
 import 'package:boltclone_stacked/services/map_service.dart';
-import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
