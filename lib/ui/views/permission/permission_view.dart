@@ -14,9 +14,7 @@ class PermissionView extends StackedView<PermissionViewModel> {
   ) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-      ),
+      body: const Text('access denied'),
     );
   }
 

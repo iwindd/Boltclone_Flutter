@@ -21,12 +21,16 @@ class HomeView extends StackedView<HomeViewModel> {
           children: <Widget>[
             GoogleMap(
               initialCameraPosition: CameraPosition(
-                  target: viewModel.currentPosition,
-                  zoom: viewModel.currentZoom),
+                target: viewModel.currentPosition,
+                zoom: viewModel.currentZoom,
+              ),
+              myLocationEnabled: true,
               rotateGesturesEnabled: false,
               tiltGesturesEnabled: false,
               zoomGesturesEnabled: true,
+              onMapCreated: viewModel.onMapCreated,
             ),
+            Text(viewModel.currentPosition.toString()),
             const MapSearchBottomSheet()
           ],
         ),
