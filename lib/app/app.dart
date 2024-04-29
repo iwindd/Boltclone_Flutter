@@ -9,6 +9,11 @@ import 'package:boltclone_stacked/services/map_service.dart';
 import 'package:boltclone_stacked/services/permission_service.dart';
 import 'package:boltclone_stacked/ui/views/search/search_view.dart';
 import 'package:boltclone_stacked/ui/views/about/about_view.dart';
+import 'package:boltclone_stacked/ui/views/promotion/promotion_view.dart';
+import 'package:boltclone_stacked/ui/views/payment/payment_view.dart';
+import 'package:boltclone_stacked/ui/views/history/history_view.dart';
+import 'package:boltclone_stacked/ui/views/workhistory/workhistory_view.dart';
+import 'package:boltclone_stacked/ui/views/support/support_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -18,6 +23,11 @@ import 'package:boltclone_stacked/ui/views/about/about_view.dart';
     MaterialRoute(page: PermissionView),
     MaterialRoute(page: SearchView),
     MaterialRoute(page: AboutView),
+    MaterialRoute(page: PromotionView),
+    MaterialRoute(page: PaymentView),
+    MaterialRoute(page: HistoryView),
+    MaterialRoute(page: WorkhistoryView),
+    MaterialRoute(page: SupportView),
 // @stacked-route
   ],
   dependencies: [
