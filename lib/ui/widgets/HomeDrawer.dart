@@ -24,12 +24,12 @@ class HomeDrawer extends StatefulWidget {
 class _HomeDrawerState extends State<HomeDrawer> {
   final _navigationService = locator<NavigationService>();
   List<MenuItem> menuLists = [
-    MenuItem(Routes.homeView, "การชำระเงิน", Icons.credit_card_outlined, ""),
+    MenuItem(Routes.paymentView, "การชำระเงิน", Icons.credit_card_outlined, ""),
     MenuItem(
-        Routes.homeView, "โปรโมชัน", Icons.sell_outlined, "กรอกรหัสโปรโมชั่น"),
-    MenuItem(Routes.homeView, "การโดยสารของฉัน", Icons.schedule_outlined, ""),
-    MenuItem(Routes.homeView, "ค่าโดยสารของคุณ", Icons.work_outline, ""),
-    MenuItem(Routes.homeView, "การสนับสนุน", Icons.help_outline, ""),
+        Routes.promotionView, "โปรโมชัน", Icons.sell_outlined, "กรอกรหัสโปรโมชั่น"),
+    MenuItem(Routes.historyView, "การโดยสารของฉัน", Icons.schedule_outlined, ""),
+    MenuItem(Routes.workhistoryView, "ประวัติการทำงาน", Icons.work_outline, ""),
+    MenuItem(Routes.supportView, "การสนับสนุน", Icons.help_outline, ""),
     MenuItem(Routes.aboutView, "เกี่ยวกับ", Icons.info_outline, ""),
   ];
 
