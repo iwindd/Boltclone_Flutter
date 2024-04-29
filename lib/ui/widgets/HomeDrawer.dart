@@ -1,12 +1,17 @@
+import 'package:boltclone_stacked/app/app.locator.dart';
+import 'package:boltclone_stacked/app/app.router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class MenuItem {
-  String title;
   IconData icon;
+  String title;
+  String route;
   String? subtitle;
 
-  MenuItem(this.title, this.icon, this.subtitle);
+  MenuItem(this.route, this.title, this.icon, this.subtitle);
 }
 
 class HomeDrawer extends StatefulWidget {
@@ -17,13 +22,15 @@ class HomeDrawer extends StatefulWidget {
 }
 
 class _HomeDrawerState extends State<HomeDrawer> {
+  final _navigationService = locator<NavigationService>();
   List<MenuItem> menuLists = [
-    MenuItem("การชำระเงิน", Icons.credit_card_outlined, ""),
-    MenuItem("โปรโมชัน", Icons.sell_outlined, "กรอกรหัสโปรโมชั่น"),
-    MenuItem("การโดยสารของฉัน", Icons.schedule_outlined, ""),
-    MenuItem("ค่าโดยสารของคุณ", Icons.work_outline, ""),
-    MenuItem("การสนับสนุน", Icons.help_outline, ""),
-    MenuItem("เกี่ยวกับ", Icons.info_outline, ""),
+    MenuItem(Routes.homeView, "การชำระเงิน", Icons.credit_card_outlined, ""),
+    MenuItem(
+        Routes.homeView, "โปรโมชัน", Icons.sell_outlined, "กรอกรหัสโปรโมชั่น"),
+    MenuItem(Routes.homeView, "การโดยสารของฉัน", Icons.schedule_outlined, ""),
+    MenuItem(Routes.homeView, "ค่าโดยสารของคุณ", Icons.work_outline, ""),
+    MenuItem(Routes.homeView, "การสนับสนุน", Icons.help_outline, ""),
+    MenuItem(Routes.aboutView, "เกี่ยวกับ", Icons.info_outline, ""),
   ];
 
   @override
@@ -91,12 +98,20 @@ class _HomeDrawerState extends State<HomeDrawer> {
                 itemBuilder: (context, index) {
                   MenuItem menu = menuLists[index];
 
-                  return ListTile(
-                    title: Text(menu.title),
-                    leading: Icon(menu.icon),
-                    subtitle:
-                        menu.subtitle != "" ? Text(menu.subtitle ?? "") : null,
-                  );
+                  return GestureDetector(
+                      onTap: () async {
+                        await _navigationService.navigateTo(
+                          menu.route,
+                          transition: TransitionsBuilders.slideRight,
+                        );
+                      },
+                      child: ListTile(
+                        title: Text(menu.title),
+                        leading: Icon(menu.icon),
+                        subtitle: menu.subtitle != ""
+                            ? Text(menu.subtitle ?? "")
+                            : null,
+                      ));
                 },
               ),
             )
