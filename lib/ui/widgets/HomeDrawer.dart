@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
+class MenuItem {
+  String title;
+  IconData icon;
+  String? subtitle;
+
+  MenuItem(this.title, this.icon, this.subtitle);
+}
+
 class HomeDrawer extends StatefulWidget {
   const HomeDrawer({super.key});
 
@@ -9,6 +17,15 @@ class HomeDrawer extends StatefulWidget {
 }
 
 class _HomeDrawerState extends State<HomeDrawer> {
+  List<MenuItem> menuLists = [
+    MenuItem("การชำระเงิน", Icons.credit_card_outlined, ""),
+    MenuItem("โปรโมชัน", Icons.sell_outlined, "กรอกรหัสโปรโมชั่น"),
+    MenuItem("การโดยสารของฉัน", Icons.schedule_outlined, ""),
+    MenuItem("ค่าโดยสารของคุณ", Icons.work_outline, ""),
+    MenuItem("การสนับสนุน", Icons.help_outline, ""),
+    MenuItem("เกี่ยวกับ", Icons.info_outline, ""),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -67,6 +84,20 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                 ),
+              ),
+              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              child: ListView.builder(
+                itemCount: menuLists.length,
+                itemBuilder: (context, index) {
+                  MenuItem menu = menuLists[index];
+
+                  return ListTile(
+                    title: Text(menu.title),
+                    leading: Icon(menu.icon),
+                    subtitle:
+                        menu.subtitle != "" ? Text(menu.subtitle ?? "") : null,
+                  );
+                },
               ),
             )
           ],
