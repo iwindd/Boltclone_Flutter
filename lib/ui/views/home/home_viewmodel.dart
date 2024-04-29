@@ -2,12 +2,14 @@ import 'dart:async';
 
 import 'package:boltclone_stacked/app/app.locator.dart';
 import 'package:boltclone_stacked/services/map_service.dart';
+import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:stacked/stacked.dart';
 
 class HomeViewModel extends BaseViewModel {
   // service
   final _mapService = locator<MapService>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   // variable
   LatLng _currentPosition = const LatLng(0, 0);
@@ -19,6 +21,7 @@ class HomeViewModel extends BaseViewModel {
 
   // getter
   LatLng get currentPosition => _currentPosition;
+  GlobalKey<ScaffoldState> get scaffoldKey => _scaffoldKey;
 
   HomeViewModel() {
     _mapService.getUserLocation().then((data) {
