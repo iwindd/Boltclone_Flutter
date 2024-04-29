@@ -6,7 +6,7 @@ import 'package:boltclone_stacked/app/app.router.dart';
 class SearchViewModel extends FormViewModel {
   final _navigationService = locator<NavigationService>();
 
-  void onClose() async{
+  void onClose() async {
     await _navigationService.navigateTo(
       Routes.homeView,
       transition: TransitionsBuilders.slideBottom,

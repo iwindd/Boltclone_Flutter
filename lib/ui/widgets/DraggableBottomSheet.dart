@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class DraggableBottomSheet extends StatefulWidget {
   final Widget child;
   final VoidCallback goBack;
-  const DraggableBottomSheet({super.key, required this.child, required this.goBack});
+  const DraggableBottomSheet(
+      {super.key, required this.child, required this.goBack});
 
   @override
   State<DraggableBottomSheet> createState() => _DraggableBottomSheetState();
@@ -12,7 +13,7 @@ class DraggableBottomSheet extends StatefulWidget {
 class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
   final sheet = GlobalKey();
   final controller = DraggableScrollableController();
-  
+
   get goBack => null;
 
   @override
@@ -51,7 +52,6 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
 
   DraggableScrollableSheet get getSheet =>
       (sheet.currentWidget as DraggableScrollableSheet);
-
 
   @override
   Widget build(BuildContext context) {

@@ -50,7 +50,7 @@ class _TextFormFieldSearchState extends State<TextFormFieldSearch> {
       decoration: InputDecoration(
         hintText: widget.hintText,
         filled: true,
-        fillColor: _isFocused  ? Colors.white : Colors.transparent,
+        fillColor: _isFocused ? Colors.white : Colors.transparent,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12.0),
           borderSide: const BorderSide(color: Colors.transparent, width: 2),
@@ -95,80 +95,3 @@ class _TextFormFieldSearchState extends State<TextFormFieldSearch> {
     );
   }
 }
-
-/* 
-
-
-class TextFormFieldSearch extends StatefulWidget {
-  final TextEditingController controller;
-  final String hintText;
-  final IconData prefixIcon;
-  final IconData suffixIcon;
-
-  const TextFormFieldSearch({
-    super.key,
-    required this.controller,
-    required this.hintText,
-    required this.prefixIcon,
-    required this.suffixIcon,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      decoration: InputDecoration(
-        hintText: hintText,
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.0),
-          borderSide: const BorderSide(color: Colors.transparent),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.0),
-          borderSide: BorderSide(color: Colors.green.shade400, width: 2),
-        ),
-        prefixIcon: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(width: 3),
-            SizedBox(
-              height: 30,
-              child: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                child: Icon(
-                  prefixIcon,
-                  size: 20,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            const SizedBox(width: 10),
-          ],
-        ),
-        suffixIcon: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(width: 10),
-            Icon(
-              suffixIcon,
-              color: Colors.black,
-              size: 20,
-            ),
-            const SizedBox(width: 20),
-          ],
-        ),
-      ),
-    );
-  }
-  
-  @override
-  // ignore: no_logic_in_create_state
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
-}
-
- */
