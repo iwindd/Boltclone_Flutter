@@ -14,6 +14,10 @@ class PaymentView extends StackedView<PaymentViewModel> {
   ) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: viewModel.onClose, icon: const Icon(Icons.arrow_back)),
+      ),
       body: Container(
         padding: const EdgeInsets.only(left: 25.0, right: 25.0),
       ),
