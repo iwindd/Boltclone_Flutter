@@ -25,9 +25,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
   final _navigationService = locator<NavigationService>();
   List<MenuItem> menuLists = [
     MenuItem(Routes.paymentView, "การชำระเงิน", Icons.credit_card_outlined, ""),
+    MenuItem(Routes.promotionView, "โปรโมชัน", Icons.sell_outlined,
+        "กรอกรหัสโปรโมชั่น"),
     MenuItem(
-        Routes.promotionView, "โปรโมชัน", Icons.sell_outlined, "กรอกรหัสโปรโมชั่น"),
-    MenuItem(Routes.historyView, "การโดยสารของฉัน", Icons.schedule_outlined, ""),
+        Routes.historyView, "การโดยสารของฉัน", Icons.schedule_outlined, ""),
     MenuItem(Routes.workhistoryView, "ประวัติการทำงาน", Icons.work_outline, ""),
     MenuItem(Routes.supportView, "การสนับสนุน", Icons.help_outline, ""),
     MenuItem(Routes.aboutView, "เกี่ยวกับ", Icons.info_outline, ""),
@@ -35,11 +36,13 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Drawer(
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(0), bottomRight: Radius.circular(0))),
-        backgroundColor: Colors.grey,
+        backgroundColor: theme.colorScheme.secondary,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -72,9 +75,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   ),
                   leading: CircleAvatar(
                     radius: 40,
+                    backgroundColor: Color.fromARGB(255, 244, 244, 244),
                     child: Icon(
                       Icons.person,
-                      color: Colors.white,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
