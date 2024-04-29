@@ -76,7 +76,7 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
                   child: CircleAvatar(
                       radius: 17,
                       backgroundColor: Colors.white,
-                      child: Icon(Icons.near_me)),
+                      child: Icon(Icons.near_me_outlined)),
                 ),
               ),
               Expanded(
