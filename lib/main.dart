@@ -23,6 +23,21 @@ class MainApp extends StatelessWidget {
       initialRoute: Routes.startupView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
+      theme: ThemeData(
+        colorScheme: const ColorScheme(
+          brightness: Brightness.dark,
+          primary: Colors.green,
+          onPrimary: Colors.black,
+          secondary: Color.fromARGB(255, 244, 244, 244),
+          onSecondary: Colors.black,
+          error: Colors.red,
+          onError: Colors.black,
+          background: Colors.white,
+          onBackground: Colors.black,
+          surface: Colors.white,
+          onSurface: Colors.black,
+        ),
+      ),
       navigatorObservers: [
         StackedService.routeObserver,
       ],
