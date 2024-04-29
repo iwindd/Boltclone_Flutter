@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class DraggableBottomSheet extends StatefulWidget {
   final Widget child;
-  const DraggableBottomSheet({super.key, required this.child});
+  final VoidCallback goBack;
+  const DraggableBottomSheet({super.key, required this.child, required this.goBack});
 
   @override
   State<DraggableBottomSheet> createState() => _DraggableBottomSheetState();
@@ -11,6 +12,8 @@ class DraggableBottomSheet extends StatefulWidget {
 class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
   final sheet = GlobalKey();
   final controller = DraggableScrollableController();
+  
+  get goBack => null;
 
   @override
   void initState() {
@@ -49,41 +52,58 @@ class _DraggableBottomSheetState extends State<DraggableBottomSheet> {
   DraggableScrollableSheet get getSheet =>
       (sheet.currentWidget as DraggableScrollableSheet);
 
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (builder, constraints) {
       return DraggableScrollableSheet(
         key: sheet,
-        initialChildSize: 0.13,
-        maxChildSize: 0.13,
-        minChildSize: 0.13,
+        initialChildSize: 0.19,
+        maxChildSize: 0.19,
+        minChildSize: 0.19,
         expand: true,
         snap: true,
-        snapSizes: const [0.13],
+        snapSizes: const [0.19],
         controller: controller,
         builder: (BuildContext context, ScrollController scrollController) {
-          return DecoratedBox(
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 5,
-                      spreadRadius: 1,
-                      offset: Offset(0, 1))
-                ],
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    topRight: Radius.circular(12))),
-            child: CustomScrollView(
-              controller: scrollController,
-              slivers: [
-                topButtonIndicator(),
-                SliverToBoxAdapter(
-                  child: widget.child,
-                )
-              ],
-            ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              GestureDetector(
+                onTap: widget.goBack,
+                child: const Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5, bottom: 5),
+                  child: CircleAvatar(
+                      radius: 17,
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.near_me)),
+                ),
+              ),
+              Expanded(
+                  child: DecoratedBox(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 5,
+                          spreadRadius: 1,
+                          offset: Offset(0, 1))
+                    ],
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(12),
+                        topRight: Radius.circular(12))),
+                child: CustomScrollView(
+                  controller: scrollController,
+                  slivers: [
+                    topButtonIndicator(),
+                    SliverToBoxAdapter(
+                      child: widget.child,
+                    )
+                  ],
+                ),
+              ))
+            ],
           );
         },
       );

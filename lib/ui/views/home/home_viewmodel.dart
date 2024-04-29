@@ -26,11 +26,21 @@ class HomeViewModel extends BaseViewModel {
     });
   }
 
+  get goback => null;
+
   void onMapCreated(GoogleMapController controller) {
     _mapController = controller;
 
     googleMapCompleterController.complete(_mapController);
     _mapController?.animateCamera(CameraUpdate.newCameraPosition(
         CameraPosition(target: _currentPosition, zoom: currentZoom)));
+  }
+
+  void goBack() {
+    _mapService.getUserLocation().then((data) {
+      _currentPosition = LatLng(data.latitude, data.longitude);
+      _mapController?.animateCamera(CameraUpdate.newCameraPosition(
+          CameraPosition(target: _currentPosition, zoom: currentZoom)));
+    });
   }
 }
