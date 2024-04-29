@@ -24,6 +24,7 @@ class MainApp extends StatelessWidget {
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       theme: ThemeData(
+        fontFamily: 'Sarabun',
         colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: Colors.green,
