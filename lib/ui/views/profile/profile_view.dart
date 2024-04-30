@@ -52,10 +52,10 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     SizedBox(height: 7),
                     ListTile(
                       title: Text("ข้อมูลส่วนตัว"),
-                      leading: Icon(Icons.person),
+                      leading: Icon(Icons.person, color: Colors.black54),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        size: 12,
+                        size: 15,
                         color: Colors.black38,
                       ),
                       shape: Border(
@@ -64,10 +64,10 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     ),
                     ListTile(
                       title: Text("เข้าสู่ระบบและการรักษาความปลอดภัย"),
-                      leading: Icon(Icons.verified_user_outlined),
+                      leading: Icon(Icons.verified_user_outlined, color: Colors.black54),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        size: 12,
+                        size: 15,
                         color: Colors.black38,
                       ),
                       shape: Border(
@@ -102,10 +102,10 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     ),
                     ListTile(
                       title: Text("เพิ่มที่อยู่บ้าน"),
-                      leading: Icon(Icons.home_outlined),
+                      leading: Icon(Icons.home_outlined, color: Colors.black54),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        size: 12,
+                        size: 15,
                         color: Colors.black38,
                       ),
                       shape: Border(
@@ -114,10 +114,10 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     ),
                     ListTile(
                       title: Text("เพิ่มที่อยู่ที่ทำงาน"),
-                      leading: Icon(Icons.work_outline),
+                      leading: Icon(Icons.work_outline, color: Colors.black54),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        size: 12,
+                        size: 15,
                         color: Colors.black38,
                       ),
                       shape: Border(
@@ -126,10 +126,10 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     ),
                     ListTile(
                       title: Text("เพิ่มสถานที่"),
-                      leading: Icon(Icons.add_outlined),
+                      leading: Icon(Icons.add_outlined, color: Colors.black54),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        size: 12,
+                        size: 15,
                         color: Colors.black38,
                       ),
                       shape: Border(
@@ -155,7 +155,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
                       title: Text("การสื่อสารที่ต้องการ"),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
-                        size: 12,
+                        size: 15,
                         color: Colors.black38,
                       ),
                       shape: Border(
@@ -178,14 +178,14 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     children: [
                       ListTile(
                         title: Text("ออกจากระบบ"),
-                        leading: Icon(Icons.logout),
+                        leading: Icon(Icons.logout, color: Colors.black54),
                         shape: Border(
                           bottom: BorderSide(color: Colors.black12, width: 1.0),
                         ),
                       ),
                       ListTile(
                         title: Text("ลบบัญชีผู้ใข้"),
-                        leading: Icon(Icons.delete_outline),
+                        leading: Icon(Icons.delete_outline, color: Colors.black54),
                         shape: Border(
                           bottom: BorderSide(color: Colors.black12, width: 1.0),
                         ),
