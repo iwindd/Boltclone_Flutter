@@ -19,10 +19,15 @@ class SearchView extends StackedView<SearchViewModel> with $SearchView {
     SearchViewModel viewModel,
     Widget? child,
   ) {
+    final theme = Theme.of(context);
+
     return Scaffold(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: theme.colorScheme.background,
         appBar: AppBar(
-          title: const Text("เส้นทางของคุณ"),
+          title: const Text(
+            "เส้นทางของคุณ",
+            style: TextStyle(fontSize: 16),
+          ),
           centerTitle: true,
           leading: IconButton(
               onPressed: viewModel.onClose, icon: const Icon(Icons.close)),
@@ -30,7 +35,7 @@ class SearchView extends StackedView<SearchViewModel> with $SearchView {
         body: Container(
           margin: const EdgeInsets.only(left: 20, right: 20),
           decoration: BoxDecoration(
-            color: Colors.black12,
+            color: theme.colorScheme.secondary,
             borderRadius: BorderRadius.circular(10),
           ),
           child: SingleChildScrollView(

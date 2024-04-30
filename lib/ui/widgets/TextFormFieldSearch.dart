@@ -49,6 +49,7 @@ class _TextFormFieldSearchState extends State<TextFormFieldSearch> {
       focusNode: _focusNode,
       decoration: InputDecoration(
         hintText: widget.hintText,
+        hintStyle: const TextStyle(color: Colors.grey),
         filled: true,
         fillColor: _isFocused ? Colors.white : Colors.transparent,
         enabledBorder: OutlineInputBorder(
