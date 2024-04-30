@@ -68,7 +68,7 @@ class AboutView extends StackedView<AboutViewModel> {
                     size: 12,
                     color: Colors.black38,
                   ),
-                  shape: index < menuLists.length-1
+                  shape: index < menuLists.length - 1
                       ? const Border(
                           bottom: BorderSide(color: Colors.black12, width: 1.0),
                         )
