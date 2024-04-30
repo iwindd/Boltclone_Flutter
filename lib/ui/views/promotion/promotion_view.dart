@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'promotion_viewmodel.dart';
 
 class PromotionView extends StackedView<PromotionViewModel> {
-  const PromotionView({Key? key}) : super(key: key);
+  const PromotionView({super.key});
 
   @override
   Widget builder(
@@ -23,12 +23,13 @@ class PromotionView extends StackedView<PromotionViewModel> {
       body: Column(
         children: [
           Container(
+            height: 100,
             padding: const EdgeInsets.only(left: 20, right: 20),
             decoration: BoxDecoration(
               color: theme.colorScheme.surface,
               borderRadius: const BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
               ),
             ),
             width: MediaQuery.of(context).size.width,
@@ -59,6 +60,35 @@ class PromotionView extends StackedView<PromotionViewModel> {
               ],
             ),
           ),
+          const SizedBox(height: 5),
+          Container(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: theme.colorScheme.surface,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(15),
+                topRight: Radius.circular(15),
+              ),
+            ),
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height - 161,
+            child: const Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: Color.fromARGB(255, 244, 244, 244),
+                  child: Icon(
+                    Icons.sell,
+                    color: Colors.grey,
+                  ),
+                ),
+                Text("ส่วนลดของคุณ", style: TextStyle(color: Colors.grey)),
+                Text("จะปรากฏที่นี่", style: TextStyle(color: Colors.grey))
+              ],
+            ),
+          )
         ],
       ),
     );
