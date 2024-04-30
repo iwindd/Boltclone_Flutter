@@ -201,20 +201,6 @@ class ProfileView extends StackedView<ProfileViewModel> {
     );
   }
 
-/* 
-
-Column(
-        children: [
-          
-          
-
-          const SizedBox(height: 7),
-
-          const SizedBox(height: 7),
-          
-        ],
-      ),
- */
   @override
   ProfileViewModel viewModelBuilder(
     BuildContext context,
