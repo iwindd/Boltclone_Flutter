@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'payment_viewmodel.dart';
 
 class PaymentView extends StackedView<PaymentViewModel> {
-  const PaymentView({Key? key}) : super(key: key);
+  const PaymentView({super.key});
 
   @override
   Widget builder(
@@ -13,10 +13,6 @@ class PaymentView extends StackedView<PaymentViewModel> {
     Widget? child,
   ) {
     final theme = Theme.of(context);
-    List<MenuItem> menuLists = [
-      MenuItem("ให้คะแนนแอพ", Icons.star_outline),
-      MenuItem("กดไลค์ให้เราที่ Facebook", Icons.thumb_up_outlined),
-    ];
 
     return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.secondary,
