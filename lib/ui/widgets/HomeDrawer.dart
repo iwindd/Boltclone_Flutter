@@ -30,7 +30,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
         "กรอกรหัสโปรโมชั่น"),
     MenuItem(
         Routes.historyView, "การโดยสารของฉัน", Icons.schedule_outlined, ""),
-    MenuItem(Routes.workhistoryView, "ประวัติการทำงาน", Icons.work_outline, ""),
+    MenuItem(Routes.workhistoryView, "ค่าโดยสารของคุณ", Icons.work_outline, ""),
     MenuItem(Routes.supportView, "การสนับสนุน", Icons.help_outline, ""),
     MenuItem(Routes.aboutView, "เกี่ยวกับ", Icons.info_outline, ""),
   ];
