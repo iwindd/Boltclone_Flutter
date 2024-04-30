@@ -50,11 +50,12 @@ class PromotionView extends StackedView<PromotionViewModel> {
                 GestureDetector(
                   onTap: viewModel.onEnterPromotion,
                   child: const ListTile(
+                    contentPadding: EdgeInsets.zero,
                     title: Text("กรอกรหัสโปรโมชัน"),
-                    leading: Icon(Icons.sell_outlined),
+                    leading: Icon(Icons.sell_outlined, color: Colors.black54),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      size: 12,
+                      size: 15,
                       color: Colors.black38,
                     ),
                     shape: Border(

@@ -61,11 +61,12 @@ class AboutView extends StackedView<AboutViewModel> {
               itemBuilder: (context, index) {
                 MenuItem menu = menuLists[index];
                 return ListTile(
-                  title: Text(menu.title),
-                  leading: Icon(menu.icon),
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(menu.title, style: const TextStyle(fontSize: 14)),
+                  leading: Icon(menu.icon, color: Colors.black54,),
                   trailing: const Icon(
                     Icons.arrow_forward_ios,
-                    size: 12,
+                    size: 15,
                     color: Colors.black38,
                   ),
                   shape: index < menuLists.length - 1

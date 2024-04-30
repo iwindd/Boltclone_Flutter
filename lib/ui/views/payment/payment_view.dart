@@ -84,11 +84,12 @@ class PaymentView extends StackedView<PaymentViewModel> {
                   ),
                   const SizedBox(height: 7),
                   const ListTile(
+                    contentPadding: EdgeInsets.zero,
                     title: Text("ยอดคงเหลือ Bolt คืออะไร"),
-                    leading: Icon(Icons.help_outline),
+                    leading: Icon(Icons.help_outline, color: Colors.black54),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      size: 12,
+                      size: 15,
                       color: Colors.black38,
                     ),
                     shape: Border(
@@ -96,11 +97,12 @@ class PaymentView extends StackedView<PaymentViewModel> {
                     ),
                   ),
                   const ListTile(
+                    contentPadding: EdgeInsets.zero,
                     title: Text("ดูธุรกรรมยอดคงเหลือของ Bolt"),
-                    leading: Icon(Icons.schedule_outlined),
+                    leading: Icon(Icons.schedule_outlined, color: Colors.black54),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      size: 12,
+                      size: 15,
                       color: Colors.black38,
                     ),
                     shape: Border(
@@ -132,6 +134,7 @@ class PaymentView extends StackedView<PaymentViewModel> {
                     ),
                   ),
                   ListTile(
+                    contentPadding: EdgeInsets.zero,
                     title: Text("เงินสด"),
                     leading: Icon(
                       Icons.money,
@@ -147,11 +150,12 @@ class PaymentView extends StackedView<PaymentViewModel> {
                     ),
                   ),
                   ListTile(
+                    contentPadding: EdgeInsets.zero,
                     title: Text("เพิ่มบัตรเครดิต"),
                     leading: Icon(Icons.add_outlined),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      size: 12,
+                      size: 15,
                       color: Colors.black38,
                     ),
                     shape: Border(
@@ -171,11 +175,18 @@ class PaymentView extends StackedView<PaymentViewModel> {
                   borderRadius: BorderRadius.circular(15),
                 ),
                 child: const ListTile(
-                  title: Text("ตั้งค่าโปรไฟล์ที่ทำงานของคุณ"),
-                  leading: Icon(Icons.work_outline),
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(
+                    "ตั้งค่าโปรไฟล์ที่ทำงานของคุณ",
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  leading: Icon(
+                    Icons.work_outline,
+                    color: Colors.black54,
+                  ),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
-                    size: 12,
+                    size: 15,
                     color: Colors.black38,
                   ),
                   shape: Border(
