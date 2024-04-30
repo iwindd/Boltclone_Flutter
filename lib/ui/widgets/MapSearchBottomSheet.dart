@@ -17,20 +17,22 @@ class _MapSearchBottomSheetState extends State<MapSearchBottomSheet> {
   final _navigationService = locator<NavigationService>();
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return DraggableBottomSheet(
         goBack: widget.goBack,
         child: GestureDetector(
           onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.black12, borderRadius: BorderRadius.circular(10)),
+                color: theme.colorScheme.secondary, borderRadius: BorderRadius.circular(10)),
             padding: const EdgeInsets.all(8),
             margin: const EdgeInsets.only(left: 20, right: 20),
             child: const Row(
               children: [
                 CircleAvatar(
                   radius: 17,
-                  backgroundColor: Colors.black12,
+                  backgroundColor: Color.fromARGB(255, 233, 233, 233),
                   child: Icon(Icons.search),
                 ),
                 SizedBox(width: 8),
