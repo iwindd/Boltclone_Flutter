@@ -40,95 +40,110 @@ class _HomeDrawerState extends State<HomeDrawer> {
     final theme = Theme.of(context);
 
     return Drawer(
-        shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(0), bottomRight: Radius.circular(0))),
-        backgroundColor: theme.colorScheme.secondary,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            Container(
-              height: 100,
-              alignment: Alignment.bottomCenter,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                ),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(0),
+          bottomRight: Radius.circular(0),
+        ),
+      ),
+      backgroundColor: theme.colorScheme.secondary,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          Container(
+            height: 100,
+            alignment: Alignment.bottomCenter,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
               ),
-              child: Align(
-                alignment: Alignment.center,
-                child: GestureDetector(
-                  onTap: () async {
-                    await _navigationService.navigateTo(
-                      Routes.profileView,
-                      transition: TransitionsBuilders.slideRight,
-                    );
-                  },
-                  child: const ListTile(
-                    title: Text(
-                      "Title",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w800),
+            ),
+            child: Align(
+              alignment: Alignment.center,
+              child: GestureDetector(
+                onTap: () async {
+                  await _navigationService.navigateTo(
+                    Routes.profileView,
+                    transition: TransitionsBuilders.slideRight,
+                  );
+                },
+                child: const ListTile(
+                  title: Text(
+                    "Title",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w800),
+                  ),
+                  subtitle: Text(
+                    "บัญชีของฉัน",
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 13,
                     ),
-                    subtitle: Text(
-                      "บัญชีของฉัน",
-                      style: TextStyle(
-                        color: Colors.green,
-                        fontSize: 13,
-                      ),
-                    ),
-                    leading: CircleAvatar(
-                      radius: 40,
-                      backgroundColor: Color.fromARGB(255, 244, 244, 244),
-                      child: Icon(
-                        Icons.person,
-                        color: Colors.grey,
-                      ),
+                  ),
+                  leading: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: Color.fromARGB(255, 244, 244, 244),
+                    child: Icon(
+                      Icons.person,
+                      color: Colors.grey,
                     ),
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 8,
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height - 108,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
             ),
-            Container(
-              height: MediaQuery.of(context).size.height - 108,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(10),
-                  topRight: Radius.circular(10),
-                ),
-              ),
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
-              child: ListView.builder(
-                itemCount: menuLists.length,
-                itemBuilder: (context, index) {
-                  MenuItem menu = menuLists[index];
+            padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: ListView.builder(
+              itemCount: menuLists.length,
+              itemBuilder: (context, index) {
+                MenuItem menu = menuLists[index];
 
-                  return GestureDetector(
-                      onTap: () async {
-                        await _navigationService.navigateTo(
-                          menu.route,
-                          transition: TransitionsBuilders.slideRight,
-                        );
-                      },
-                      child: ListTile(
-                        title: Text(menu.title),
-                        leading: Icon(menu.icon),
-                        subtitle: menu.subtitle != ""
-                            ? Text(menu.subtitle ?? "")
-                            : null,
-                      ));
-                },
-              ),
-            )
-          ],
-        ));
+                return GestureDetector(
+                  onTap: () async {
+                    await _navigationService.navigateTo(
+                      menu.route,
+                      transition: TransitionsBuilders.slideRight,
+                    );
+                  },
+                  child: ListTile(
+                    title: Text(
+                      menu.title,
+                      style: const TextStyle(fontSize: 15),
+                    ),
+                    leading: Icon(
+                      menu.icon,
+                      color: Colors.black54,
+                    ),
+                    subtitle: menu.subtitle != ""
+                        ? Text(
+                            menu.subtitle ?? "",
+                            style: const TextStyle(
+                                color: Colors.black54, fontSize: 12),
+                          )
+                        : null,
+                  ),
+                );
+              },
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
