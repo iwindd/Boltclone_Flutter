@@ -14,12 +14,14 @@ class PromotionView extends StackedView<PromotionViewModel> {
   ) {
     final theme = Theme.of(context);
 
+    AppBar appBar = AppBar(
+      leading: IconButton(
+          onPressed: viewModel.onClose, icon: const Icon(Icons.arrow_back)),
+    );
+
     return Scaffold(
       backgroundColor: theme.colorScheme.secondary,
-      appBar: AppBar(
-        leading: IconButton(
-            onPressed: viewModel.onClose, icon: const Icon(Icons.arrow_back)),
-      ),
+      appBar: appBar,
       body: Column(
         children: [
           Container(
@@ -33,10 +35,10 @@ class PromotionView extends StackedView<PromotionViewModel> {
               ),
             ),
             width: MediaQuery.of(context).size.width,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "โปรโมชัน",
                   style: TextStyle(
                     color: Colors.black,
@@ -44,17 +46,20 @@ class PromotionView extends StackedView<PromotionViewModel> {
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                SizedBox(height: 10),
-                ListTile(
-                  title: Text("กรอกรหัสโปรโมชัน"),
-                  leading: Icon(Icons.sell_outlined),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    size: 12,
-                    color: Colors.black38,
-                  ),
-                  shape: Border(
-                    bottom: BorderSide(color: Colors.black12, width: 1.0),
+                const SizedBox(height: 10),
+                GestureDetector(
+                  onTap: viewModel.onEnterPromotion,
+                  child: const ListTile(
+                    title: Text("กรอกรหัสโปรโมชัน"),
+                    leading: Icon(Icons.sell_outlined),
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 12,
+                      color: Colors.black38,
+                    ),
+                    shape: Border(
+                      bottom: BorderSide(color: Colors.black12, width: 1.0),
+                    ),
                   ),
                 )
               ],
@@ -72,7 +77,7 @@ class PromotionView extends StackedView<PromotionViewModel> {
               ),
             ),
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height - 161,
+            height: MediaQuery.of(context).size.height - (105+appBar.preferredSize.height),
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
