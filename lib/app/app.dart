@@ -15,6 +15,7 @@ import 'package:boltclone_stacked/ui/views/history/history_view.dart';
 import 'package:boltclone_stacked/ui/views/workhistory/workhistory_view.dart';
 import 'package:boltclone_stacked/ui/views/support/support_view.dart';
 import 'package:boltclone_stacked/ui/views/promotion_enter/promotion_enter_view.dart';
+import 'package:boltclone_stacked/ui/views/profile/profile_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -30,6 +31,7 @@ import 'package:boltclone_stacked/ui/views/promotion_enter/promotion_enter_view.
     MaterialRoute(page: WorkhistoryView),
     MaterialRoute(page: SupportView),
     MaterialRoute(page: PromotionEnterView),
+    MaterialRoute(page: ProfileView),
 // @stacked-route
   ],
   dependencies: [

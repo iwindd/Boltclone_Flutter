@@ -10,6 +10,7 @@ class MenuItem {
 
   MenuItem(this.title, this.icon);
 }
+
 class PaymentViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 

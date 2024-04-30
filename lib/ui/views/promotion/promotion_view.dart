@@ -77,7 +77,8 @@ class PromotionView extends StackedView<PromotionViewModel> {
               ),
             ),
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height - (105+appBar.preferredSize.height),
+            height: MediaQuery.of(context).size.height -
+                (105 + appBar.preferredSize.height),
             child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

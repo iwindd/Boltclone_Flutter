@@ -1,5 +1,6 @@
 import 'package:boltclone_stacked/app/app.locator.dart';
 import 'package:boltclone_stacked/app/app.router.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
@@ -56,29 +57,37 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   bottomRight: Radius.circular(10),
                 ),
               ),
-              child: const Align(
+              child: Align(
                 alignment: Alignment.center,
-                child: ListTile(
-                  title: Text(
-                    "Title",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w800),
-                  ),
-                  subtitle: Text(
-                    "บัญชีของฉัน",
-                    style: TextStyle(
-                      color: Colors.green,
-                      fontSize: 13,
+                child: GestureDetector(
+                  onTap: () async {
+                    await _navigationService.navigateTo(
+                      Routes.profileView,
+                      transition: TransitionsBuilders.slideRight,
+                    );
+                  },
+                  child: const ListTile(
+                    title: Text(
+                      "Title",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w800),
                     ),
-                  ),
-                  leading: CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Color.fromARGB(255, 244, 244, 244),
-                    child: Icon(
-                      Icons.person,
-                      color: Colors.grey,
+                    subtitle: Text(
+                      "บัญชีของฉัน",
+                      style: TextStyle(
+                        color: Colors.green,
+                        fontSize: 13,
+                      ),
+                    ),
+                    leading: CircleAvatar(
+                      radius: 40,
+                      backgroundColor: Color.fromARGB(255, 244, 244, 244),
+                      child: Icon(
+                        Icons.person,
+                        color: Colors.grey,
+                      ),
                     ),
                   ),
                 ),
