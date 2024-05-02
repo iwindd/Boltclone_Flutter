@@ -36,5 +36,9 @@ flutter:
             weight: 700
           - asset: assets/fonts/Sarabun-Italic.ttf
             style: italic
+  assets:
+    - assets/images/icon/
+    - assets/images/country/
+
   uses-material-design: true
 

@@ -1,3 +1,4 @@
+import 'package:boltclone_stacked/services/authentication_service.dart';
 import 'package:boltclone_stacked/services/permission_service.dart';
 import 'package:stacked/stacked.dart';
 import 'package:boltclone_stacked/app/app.locator.dart';
@@ -7,6 +8,7 @@ import 'package:stacked_services/stacked_services.dart';
 class StartupViewModel extends BaseViewModel {
   final _permissionService = locator<PermissionService>();
   final _navigationService = locator<NavigationService>();
+  final _authService = locator<AuthenticationService>();
 
   // Place anything here that needs to happen before we get into the application
   Future runStartupLogic() async {
@@ -14,6 +16,13 @@ class StartupViewModel extends BaseViewModel {
     await _permissionService.requestAppLocationPermission();
     // This is where you can make decisions on where your app should navigate when
     // you have custom startup logic
+    bool isLoggedIn = _authService.isLoggedIn();
+
+    if (!isLoggedIn) {
+      _navigationService.replaceWith(Routes.signinView);
+
+      return;
+    }
 
     bool hasPermission = await _permissionService.hasPermission();
 

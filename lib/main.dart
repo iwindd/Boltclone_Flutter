@@ -27,7 +27,7 @@ class MainApp extends StatelessWidget {
         fontFamily: 'Sarabun',
         colorScheme: const ColorScheme(
           brightness: Brightness.dark,
-          primary: Colors.green,
+          primary: Color.fromARGB(255, 47, 201, 129),
           onPrimary: Colors.black,
           secondary: Color.fromARGB(255, 244, 244, 244),
           onSecondary: Colors.black,

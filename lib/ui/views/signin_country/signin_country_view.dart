@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'signin_country_viewmodel.dart';
 
 class SigninCountryView extends StackedView<SigninCountryViewModel> {
-  const SigninCountryView({Key? key}) : super(key: key);
+  const SigninCountryView({super.key});
 
   @override
   Widget builder(
@@ -14,8 +14,31 @@ class SigninCountryView extends StackedView<SigninCountryViewModel> {
   ) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      appBar: AppBar(
+        title: const Text(
+          "รหัสประเทศ",
+          style: TextStyle(fontSize: 16),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+            onPressed: viewModel.onClose, icon: const Icon(Icons.close)),
+      ),
+      body: Center(
+        child: ListView(
+          children: [
+            ListTile(
+              title: const Text('Thailand'),
+              leading: Image.asset('assets/images/country/th.png'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('USA'),
+              leading: Image.asset('assets/images/country/us.png'),
+              onTap: () {},
+              // เพิ่มรายการประเทศอื่น ๆ ตามต้องการ
+            ),
+          ],
+        ),
       ),
     );
   }
