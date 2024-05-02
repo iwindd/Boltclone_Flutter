@@ -11,6 +11,12 @@ import 'signin_number_viewmodel.dart';
 ])
 class SigninNumberView extends StackedView<SigninNumberViewModel> with $SigninNumberView {
   const SigninNumberView({super.key});
+  
+  @override
+  void onDispose(SigninNumberViewModel viewModel) {
+    super.onDispose(viewModel);
+    disposeForm();
+  }
 
   @override
   Widget builder(
