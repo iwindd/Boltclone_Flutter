@@ -48,7 +48,10 @@ class PromotionEnterView extends StackedView<PromotionEnterViewModel>
                   ),
                 ),
                 const SizedBox(height: 10),
-                TextFormField(controller: promotionController),
+                TextFormField(
+                  autofocus: true,
+                  controller: promotionController,
+                ),
               ],
             ),
           ),
