@@ -745,4 +745,14 @@ class MockPermissionService extends _i1.Mock implements _i9.PermissionService {
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockAuthenticationService extends _i1.Mock
-    implements _i10.AuthenticationService {}
+    implements _i10.AuthenticationService {
+  @override
+  bool isLoggedIn() => (super.noSuchMethod(
+        Invocation.method(
+          #isLoggedIn,
+          [],
+        ),
+        returnValue: false,
+        returnValueForMissingStub: false,
+      ) as bool);
+}

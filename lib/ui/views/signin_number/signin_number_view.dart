@@ -1,10 +1,15 @@
+import 'package:boltclone_stacked/ui/views/signin_number/signin_number_view.form.dart';
 import 'package:boltclone_stacked/ui/widgets/common/signin_radio/signin_radio.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked/stacked_annotations.dart';
 
 import 'signin_number_viewmodel.dart';
 
-class SigninNumberView extends StackedView<SigninNumberViewModel> {
+@FormView(fields: [
+  FormTextField(name: 'number'),
+])
+class SigninNumberView extends StackedView<SigninNumberViewModel> with $SigninNumberView {
   const SigninNumberView({super.key});
 
   @override
@@ -101,6 +106,7 @@ class SigninNumberView extends StackedView<SigninNumberViewModel> {
                                 Expanded(
                                   child: TextFormField(
                                     autofocus: true,
+                                    controller: numberController,
                                     keyboardType: TextInputType.phone,
                                     decoration: const InputDecoration(
                                       border: InputBorder.none,
@@ -179,6 +185,11 @@ class SigninNumberView extends StackedView<SigninNumberViewModel> {
         ),
       ),
     );
+  }
+
+  @override
+  void onViewModelReady(SigninNumberViewModel viewModel) {
+    syncFormWithViewModel(viewModel);
   }
 
   @override
