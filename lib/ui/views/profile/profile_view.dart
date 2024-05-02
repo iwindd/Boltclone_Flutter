@@ -13,6 +13,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
     Widget? child,
   ) {
     final theme = Theme.of(context);
+    String fullname = viewModel.GetUserFullName();
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.secondary,
@@ -34,9 +35,9 @@ class ProfileView extends StackedView<ProfileViewModel> {
                   color: theme.colorScheme.surface,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: const Column(
+                child: Column(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 25,
                       backgroundColor: Color.fromARGB(255, 244, 244, 244),
                       child: Icon(
@@ -45,12 +46,12 @@ class ProfileView extends StackedView<ProfileViewModel> {
                       ),
                     ),
                     Text(
-                      "Firstname Lastname",
+                      fullname,
                       style:
-                          TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                          const TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
                     ),
-                    SizedBox(height: 7),
-                    ListTile(
+                    const SizedBox(height: 7),
+                    const ListTile(
                       title: Text("ข้อมูลส่วนตัว"),
                       leading: Icon(Icons.person, color: Colors.black54),
                       trailing: Icon(
@@ -62,7 +63,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
                         bottom: BorderSide(color: Colors.black12, width: 1.0),
                       ),
                     ),
-                    ListTile(
+                    const ListTile(
                       title: Text("เข้าสู่ระบบและการรักษาความปลอดภัย"),
                       leading: Icon(Icons.verified_user_outlined,
                           color: Colors.black54),
@@ -75,7 +76,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
                         bottom: BorderSide(color: Colors.black12, width: 1.0),
                       ),
                     ),
-                    SizedBox(height: 7),
+                    const SizedBox(height: 7),
                   ],
                 ),
               ),
