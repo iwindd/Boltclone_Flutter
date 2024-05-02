@@ -1,8 +1,7 @@
 import 'package:boltclone_stacked/app/app.locator.dart';
 import 'package:boltclone_stacked/app/app.router.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:boltclone_stacked/services/authentication_service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -24,6 +23,8 @@ class HomeDrawer extends StatefulWidget {
 
 class _HomeDrawerState extends State<HomeDrawer> {
   final _navigationService = locator<NavigationService>();
+  final _authService = locator<AuthenticationService>();
+
   List<MenuItem> menuLists = [
     MenuItem(Routes.paymentView, "การชำระเงิน", Icons.credit_card_outlined, ""),
     MenuItem(Routes.promotionView, "โปรโมชัน", Icons.sell_outlined,
@@ -38,6 +39,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    User? userData = _authService.userData;
 
     return Drawer(
       shape: const RoundedRectangleBorder(
@@ -69,22 +71,22 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     transition: TransitionsBuilders.slideRight,
                   );
                 },
-                child: const ListTile(
+                child:  ListTile(
                   title: Text(
-                    "Title",
-                    style: TextStyle(
+                    "${userData?.firstname}",
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 16,
                         fontWeight: FontWeight.w800),
                   ),
-                  subtitle: Text(
+                  subtitle: const Text(
                     "บัญชีของฉัน",
                     style: TextStyle(
                       color: Colors.green,
                       fontSize: 13,
                     ),
                   ),
-                  leading: CircleAvatar(
+                  leading: const CircleAvatar(
                     radius: 40,
                     backgroundColor: Color.fromARGB(255, 244, 244, 244),
                     child: Icon(

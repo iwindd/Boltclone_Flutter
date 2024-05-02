@@ -14,9 +14,6 @@ class ProfileViewModel extends BaseViewModel {
 
   // ignore: non_constant_identifier_names
   String GetUserFullName() {
-
-    print(_authService.userData);
-    print(_authService.isLoggedIn());
     return "${_authService.userData?.firstname} ${_authService.userData?.lastname}";
   }
 }
