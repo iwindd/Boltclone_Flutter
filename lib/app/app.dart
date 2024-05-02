@@ -17,6 +17,9 @@ import 'package:boltclone_stacked/ui/views/support/support_view.dart';
 import 'package:boltclone_stacked/ui/views/promotion_enter/promotion_enter_view.dart';
 import 'package:boltclone_stacked/ui/views/profile/profile_view.dart';
 import 'package:boltclone_stacked/services/authentication_service.dart';
+import 'package:boltclone_stacked/ui/views/signin/signin_view.dart';
+import 'package:boltclone_stacked/ui/views/signin_number/signin_number_view.dart';
+import 'package:boltclone_stacked/ui/views/signin_country/signin_country_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -33,6 +36,9 @@ import 'package:boltclone_stacked/services/authentication_service.dart';
     MaterialRoute(page: SupportView),
     MaterialRoute(page: PromotionEnterView),
     MaterialRoute(page: ProfileView),
+    MaterialRoute(page: SigninView),
+    MaterialRoute(page: SigninNumberView),
+    MaterialRoute(page: SigninCountryView),
 // @stacked-route
   ],
   dependencies: [
