@@ -99,7 +99,8 @@ class PaymentView extends StackedView<PaymentViewModel> {
                   const ListTile(
                     contentPadding: EdgeInsets.zero,
                     title: Text("ดูธุรกรรมยอดคงเหลือของ Bolt"),
-                    leading: Icon(Icons.schedule_outlined, color: Colors.black54),
+                    leading:
+                        Icon(Icons.schedule_outlined, color: Colors.black54),
                     trailing: Icon(
                       Icons.arrow_forward_ios,
                       size: 15,

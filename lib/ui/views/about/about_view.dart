@@ -63,7 +63,10 @@ class AboutView extends StackedView<AboutViewModel> {
                 return ListTile(
                   contentPadding: EdgeInsets.zero,
                   title: Text(menu.title, style: const TextStyle(fontSize: 14)),
-                  leading: Icon(menu.icon, color: Colors.black54,),
+                  leading: Icon(
+                    menu.icon,
+                    color: Colors.black54,
+                  ),
                   trailing: const Icon(
                     Icons.arrow_forward_ios,
                     size: 15,

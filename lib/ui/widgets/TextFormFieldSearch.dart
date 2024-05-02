@@ -8,14 +8,13 @@ class TextFormFieldSearch extends StatefulWidget {
   final IconData suffixIcon;
   final bool autofocus;
 
-  const TextFormFieldSearch({
-    super.key,
-    required this.controller,
-    required this.hintText,
-    required this.prefixIcon,
-    required this.suffixIcon,
-    required this.autofocus
-  });
+  const TextFormFieldSearch(
+      {super.key,
+      required this.controller,
+      required this.hintText,
+      required this.prefixIcon,
+      required this.suffixIcon,
+      required this.autofocus});
 
   @override
   State<TextFormFieldSearch> createState() => _TextFormFieldSearchState();

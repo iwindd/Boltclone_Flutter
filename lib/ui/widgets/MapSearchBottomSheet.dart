@@ -25,7 +25,8 @@ class _MapSearchBottomSheetState extends State<MapSearchBottomSheet> {
           onTap: onTap,
           child: Container(
             decoration: BoxDecoration(
-                color: theme.colorScheme.secondary, borderRadius: BorderRadius.circular(10)),
+                color: theme.colorScheme.secondary,
+                borderRadius: BorderRadius.circular(10)),
             padding: const EdgeInsets.all(8),
             margin: const EdgeInsets.only(left: 20, right: 20),
             child: const Row(

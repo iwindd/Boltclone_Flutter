@@ -8,6 +8,7 @@ class MenuItem {
 
   MenuItem(this.title);
 }
+
 class SupportViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 

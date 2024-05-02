@@ -16,6 +16,7 @@ import 'package:boltclone_stacked/ui/views/workhistory/workhistory_view.dart';
 import 'package:boltclone_stacked/ui/views/support/support_view.dart';
 import 'package:boltclone_stacked/ui/views/promotion_enter/promotion_enter_view.dart';
 import 'package:boltclone_stacked/ui/views/profile/profile_view.dart';
+import 'package:boltclone_stacked/services/authentication_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -40,6 +41,7 @@ import 'package:boltclone_stacked/ui/views/profile/profile_view.dart';
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: MapService),
     LazySingleton(classType: PermissionService),
+    LazySingleton(classType: AuthenticationService),
 // @stacked-service
   ],
   bottomsheets: [

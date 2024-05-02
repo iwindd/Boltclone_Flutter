@@ -64,7 +64,8 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     ),
                     ListTile(
                       title: Text("เข้าสู่ระบบและการรักษาความปลอดภัย"),
-                      leading: Icon(Icons.verified_user_outlined, color: Colors.black54),
+                      leading: Icon(Icons.verified_user_outlined,
+                          color: Colors.black54),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
                         size: 15,
@@ -185,7 +186,8 @@ class ProfileView extends StackedView<ProfileViewModel> {
                       ),
                       ListTile(
                         title: Text("ลบบัญชีผู้ใข้"),
-                        leading: Icon(Icons.delete_outline, color: Colors.black54),
+                        leading:
+                            Icon(Icons.delete_outline, color: Colors.black54),
                         shape: Border(
                           bottom: BorderSide(color: Colors.black12, width: 1.0),
                         ),

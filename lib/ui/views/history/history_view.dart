@@ -49,7 +49,10 @@ class HistoryView extends StackedView<HistoryViewModel> {
           Expanded(
             child: Container(
               alignment: Alignment.center,
-              child: const Text("คุณยังไม่ได้ใช้บริการโดยสารใดๆ", style: TextStyle(color: Colors.grey),),
+              child: const Text(
+                "คุณยังไม่ได้ใช้บริการโดยสารใดๆ",
+                style: TextStyle(color: Colors.grey),
+              ),
             ),
           )
         ],

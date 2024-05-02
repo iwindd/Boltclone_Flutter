@@ -6,6 +6,7 @@
 import 'dart:async' as _i6;
 import 'dart:ui' as _i7;
 
+import 'package:boltclone_stacked/services/authentication_service.dart' as _i10;
 import 'package:boltclone_stacked/services/map_service.dart' as _i8;
 import 'package:boltclone_stacked/services/permission_service.dart' as _i9;
 import 'package:flutter/material.dart' as _i5;
@@ -739,3 +740,9 @@ class MockPermissionService extends _i1.Mock implements _i9.PermissionService {
             _i2.LocationPermission.denied),
       ) as _i6.Future<_i2.LocationPermission>);
 }
+
+/// A class which mocks [AuthenticationService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAuthenticationService extends _i1.Mock
+    implements _i10.AuthenticationService {}

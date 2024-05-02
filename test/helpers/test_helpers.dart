@@ -4,6 +4,7 @@ import 'package:boltclone_stacked/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:boltclone_stacked/services/map_service.dart';
 import 'package:boltclone_stacked/services/permission_service.dart';
+import 'package:boltclone_stacked/services/authentication_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -14,6 +15,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<MapService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<PermissionService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<AuthenticationService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -22,6 +24,7 @@ void registerServices() {
   getAndRegisterDialogService();
   getAndRegisterMapService();
   getAndRegisterPermissionService();
+  getAndRegisterAuthenticationService();
 // @stacked-mock-register
 }
 
@@ -86,6 +89,13 @@ MockPermissionService getAndRegisterPermissionService() {
   _removeRegistrationIfExists<PermissionService>();
   final service = MockPermissionService();
   locator.registerSingleton<PermissionService>(service);
+  return service;
+}
+
+MockAuthenticationService getAndRegisterAuthenticationService() {
+  _removeRegistrationIfExists<AuthenticationService>();
+  final service = MockAuthenticationService();
+  locator.registerSingleton<AuthenticationService>(service);
   return service;
 }
 // @stacked-mock-create
