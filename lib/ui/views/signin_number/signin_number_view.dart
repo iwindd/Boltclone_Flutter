@@ -159,7 +159,7 @@ class SigninNumberView extends StackedView<SigninNumberViewModel> with $SigninNu
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: viewModel.onSubmit,
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
