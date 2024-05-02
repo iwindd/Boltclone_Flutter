@@ -6,6 +6,7 @@ class TextFormFieldSearch extends StatefulWidget {
   final String hintText;
   final IconData prefixIcon;
   final IconData suffixIcon;
+  final bool autofocus;
 
   const TextFormFieldSearch({
     super.key,
@@ -13,6 +14,7 @@ class TextFormFieldSearch extends StatefulWidget {
     required this.hintText,
     required this.prefixIcon,
     required this.suffixIcon,
+    required this.autofocus
   });
 
   @override
@@ -47,6 +49,7 @@ class _TextFormFieldSearchState extends State<TextFormFieldSearch> {
     return TextFormField(
       controller: widget.controller,
       focusNode: _focusNode,
+      autofocus: widget.autofocus,
       decoration: InputDecoration(
         hintText: widget.hintText,
         hintStyle: const TextStyle(color: Colors.grey),
