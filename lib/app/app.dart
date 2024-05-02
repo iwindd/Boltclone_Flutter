@@ -20,6 +20,7 @@ import 'package:boltclone_stacked/services/authentication_service.dart';
 import 'package:boltclone_stacked/ui/views/signin/signin_view.dart';
 import 'package:boltclone_stacked/ui/views/signin_number/signin_number_view.dart';
 import 'package:boltclone_stacked/ui/views/signin_country/signin_country_view.dart';
+import 'package:boltclone_stacked/ui/dialogs/logout/logout_dialog.dart';
 // @stacked-import
 
 @StackedApp(
@@ -56,7 +57,8 @@ import 'package:boltclone_stacked/ui/views/signin_country/signin_country_view.da
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),
-    // @stacked-dialog
+    StackedDialog(classType: LogoutDialog),
+// @stacked-dialog
   ],
 )
 class App {}

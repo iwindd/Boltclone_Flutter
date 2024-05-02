@@ -47,8 +47,8 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     ),
                     Text(
                       fullname,
-                      style:
-                          const TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w700, fontSize: 20),
                     ),
                     const SizedBox(height: 7),
                     const ListTile(

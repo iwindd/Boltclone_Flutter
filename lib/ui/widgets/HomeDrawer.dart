@@ -71,7 +71,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
                     transition: TransitionsBuilders.slideRight,
                   );
                 },
-                child:  ListTile(
+                child: ListTile(
                   title: Text(
                     "${userData?.firstname}",
                     style: const TextStyle(

@@ -17,10 +17,10 @@ class SigninNumberViewModel extends FormViewModel {
     _navigationService.replaceWith(Routes.signinCountryView);
   }
 
-  void onSubmit(){
+  void onSubmit() {
     _authService.signIn(numberValue.toString());
 
-    if (_authService.isLoggedIn()){
+    if (_authService.isLoggedIn()) {
       _navigationService.replaceWith(Routes.startupView);
     }
   }
