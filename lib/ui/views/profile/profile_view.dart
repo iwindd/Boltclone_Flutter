@@ -176,16 +176,20 @@ class ProfileView extends StackedView<ProfileViewModel> {
                     color: theme.colorScheme.surface,
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
-                      ListTile(
-                        title: Text("ออกจากระบบ"),
-                        leading: Icon(Icons.logout, color: Colors.black54),
-                        shape: Border(
-                          bottom: BorderSide(color: Colors.black12, width: 1.0),
+                      GestureDetector(
+                        onTap: viewModel.onLogout,
+                        child: const ListTile(
+                          title: Text("ออกจากระบบ"),
+                          leading: Icon(Icons.logout, color: Colors.black54),
+                          shape: Border(
+                            bottom:
+                                BorderSide(color: Colors.black12, width: 1.0),
+                          ),
                         ),
                       ),
-                      ListTile(
+                      const ListTile(
                         title: Text("ลบบัญชีผู้ใข้"),
                         leading:
                             Icon(Icons.delete_outline, color: Colors.black54),
