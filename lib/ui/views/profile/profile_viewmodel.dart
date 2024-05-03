@@ -14,15 +14,21 @@ class ProfileViewModel extends BaseViewModel {
     _navigationService.navigateToHomeView();
   }
 
-  // ignore: non_constant_identifier_names
-  String GetUserFullName() {
+  String getUserFullname() {
     return "${_authService.userData?.firstname} ${_authService.userData?.lastname}";
   }
 
-  void onLogout() {
-    _dialogService.showCustomDialog(
+  void onLogout() async {
+    var response = await _dialogService.showCustomDialog(
       variant: DialogType.logout,
       description: 'แน่ใจไหมว่าต้องการออกจากระบบ',
     );
+
+    bool confirmationResult = response!.confirmed;
+    
+    if (confirmationResult){
+      _authService.logout();
+      _navigationService.replaceWith(Routes.startupView);
+    }
   }
 }

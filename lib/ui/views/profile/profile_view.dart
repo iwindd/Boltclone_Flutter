@@ -13,7 +13,7 @@ class ProfileView extends StackedView<ProfileViewModel> {
     Widget? child,
   ) {
     final theme = Theme.of(context);
-    String fullname = viewModel.GetUserFullName();
+    String fullname = viewModel.getUserFullname();
 
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.secondary,

@@ -28,4 +28,8 @@ class AuthenticationService {
 
     _userData = userData;
   }
+
+  void logout() {
+    _userData = null;
+  }
 }
